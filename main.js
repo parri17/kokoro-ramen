@@ -4,7 +4,7 @@
 
    1. Menú responsive y cabecera
    2. Hero: reloj, lluvia, Typed.js y parallax del interludio
-   3. Monta tu bol: pestañas, ánimo, toppings y omikuji
+   3. Monta tu bowl: pestañas, ánimo, toppings y omikuji
    4. Carrusel de la carta (sin librerías de sliders)
    5. Acordeón
    6. Validación del formulario
@@ -153,7 +153,7 @@ $(function () {
 
   const BASE_PRICE = 11.5;
 
-  // Huecos del bol (en %) donde se colocan los toppings
+  // Huecos del bowl (en %) donde se colocan los toppings
   const slots = [
     { x: 30, y: 31 }, { x: 69, y: 29 }, { x: 26, y: 65 },
     { x: 72, y: 66 }, { x: 50, y: 48 }, { x: 50, y: 80 }
@@ -209,7 +209,7 @@ $(function () {
     selectedMood = { name: $(this).data('name'), word: $(this).data('word') };
   });
 
-  // 3.3 Añadir topping al bol
+  // 3.3 Añadir topping al bowl
   $ingredients.on('click', '.ingredient', function () {
     const freeSlot = usedSlots.indexOf(false);
 
@@ -239,7 +239,7 @@ $(function () {
     updateTotal();
   });
 
-  // 3.4 Quitar topping tocándolo en el bol
+  // 3.4 Quitar topping tocándolo en el bowl
   $bowlToppings.on('click', '.topping', function () {
     const $t = $(this);
     usedSlots[$t.attr('data-slot')] = false;
@@ -282,7 +282,7 @@ $(function () {
     }).get();
     const frase = fortunes[Math.floor(Math.random() * fortunes.length)];
 
-    $('#fortune-title').text(nombre === 'esta noche' ? 'Tu bol de esta noche' : 'El bol de ' + nombre);
+    $('#fortune-title').text(nombre === 'esta noche' ? 'Tu bowl de esta noche' : 'El bowl de ' + nombre);
     $('#fortune-text').text(frase);
     $('#fortune-summary').text(
       'Caldo ' + selectedMood.name + ' para llegar ' + selectedMood.word +
