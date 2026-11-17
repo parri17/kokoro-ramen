@@ -1,0 +1,365 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Kokoro · Ramen nocturno en Argüelles</title>
+  <meta name="description" content="Kokoro: un ramen bar nocturno donde montas tu bol según cómo te sientes.">
+
+  <!-- Tipografías -->
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600&family=Shippori+Mincho:wght@500;700;800&family=Space+Mono:wght@400;700&display=swap" rel="stylesheet">
+
+  <!-- AOS -->
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/aos/2.3.4/aos.css">
+
+  <!-- Estilos propios -->
+  <link rel="stylesheet" href="styles.css">
+</head>
+<body>
+
+  <!-- ===================== CABECERA ===================== -->
+  <header class="header">
+    <div class="header__inner">
+      <a href="#inicio" class="logo" aria-label="Kokoro, inicio">
+        <span class="logo__kanji">心</span>
+        <span class="logo__name">KOKORO</span>
+      </a>
+
+      <nav class="nav" aria-label="Menú principal">
+        <ul class="nav__list">
+          <li><a href="#ritual"><span>01</span> El ritual</a></li>
+          <li><a href="#monta-tu-bol"><span>02</span> Tu bol</a></li>
+          <li><a href="#carta"><span>03</span> Carta</a></li>
+          <li><a href="#historia"><span>04</span> Historia</a></li>
+          <li><a href="#faq"><span>05</span> FAQ</a></li>
+          <li><a href="#reserva" class="nav__cta">Reservar</a></li>
+        </ul>
+      </nav>
+
+      <button class="menu-btn" type="button" aria-label="Abrir menú" aria-expanded="false">
+        <span></span><span></span>
+      </button>
+    </div>
+  </header>
+
+  <main>
+
+    <!-- ===================== HERO ===================== -->
+    <section class="hero" id="inicio">
+      <div class="hero__bg" aria-hidden="true"></div>
+      <div class="rain" aria-hidden="true"></div>
+
+      <p class="neon-sign" aria-hidden="true">心ラーメン</p>
+
+      <div class="hero__content">
+        <p class="label">Argüelles, Madrid — <span id="clock">00:00</span></p>
+        <h1 class="hero__title">Un bol para<br><em>cada noche.</em></h1>
+        <p class="hero__typed">Esta noche me siento <span class="typed-text"></span></p>
+        <div class="hero__actions">
+          <a href="#monta-tu-bol" class="btn btn--neon">Montar mi bol</a>
+          <a href="#carta" class="btn btn--line">Ver la carta</a>
+        </div>
+      </div>
+
+      <a href="#ritual" class="scroll-hint" aria-label="Bajar">
+        <span>scroll</span>
+      </a>
+    </section>
+
+    <!-- ===================== EL RITUAL ===================== -->
+    <section class="section ritual" id="ritual">
+      <header class="section__head" data-aos="fade-up">
+        <p class="label">01 — El ritual</p>
+        <h2 class="section__title">No eliges un plato.<br>Nos cuentas cómo estás.</h2>
+      </header>
+
+      <div class="ritual__grid">
+        <article class="ritual__step" data-aos="fade-up">
+          <span class="ritual__num">01</span>
+          <h3>El ánimo</h3>
+          <p>Cada estado tiene su caldo. Un día largo pide tonkotsu; una noche fría, miso.</p>
+        </article>
+        <article class="ritual__step" data-aos="fade-up" data-aos-delay="150">
+          <span class="ritual__num">02</span>
+          <h3>Los toppings</h3>
+          <p>Hasta seis ingredientes que ves caer en tu bol en tiempo real.</p>
+        </article>
+        <article class="ritual__step" data-aos="fade-up" data-aos-delay="300">
+          <span class="ritual__num">03</span>
+          <h3>El omikuji</h3>
+          <p>Como en los templos de Japón, cada bol llega con un mensaje escrito solo para ti.</p>
+        </article>
+      </div>
+    </section>
+
+    <!-- ===================== INTERLUDIO (foto a pantalla completa) ===================== -->
+    <section class="interlude" aria-label="Kokoro de noche">
+      <div class="interlude__bg" aria-hidden="true"></div>
+      <blockquote class="interlude__quote" data-aos="fade-up">
+        <p>"Las mejores conversaciones pasan a las dos de la madrugada, delante de un bol."</p>
+        <footer class="label">— Cocina abierta hasta la 01:00</footer>
+      </blockquote>
+    </section>
+
+    <!-- ===================== MONTA TU BOL ===================== -->
+    <section class="section builder" id="monta-tu-bol">
+      <header class="section__head" data-aos="fade-up">
+        <p class="label">02 — Tu bol</p>
+        <h2 class="section__title">Monta tu bol</h2>
+      </header>
+
+      <div class="builder__layout">
+
+        <!-- Bol -->
+        <div class="builder__stage" data-aos="fade-up">
+          <!-- Bol: foto real de fondo + capa de color del caldo + toppings -->
+          <div class="bowl">
+            <div class="bowl__broth" id="broth">
+              <div class="bowl__tint" aria-hidden="true"></div>
+              <div class="bowl__toppings" id="bowl-toppings"></div>
+            </div>
+          </div>
+          <p class="builder__hint label">Toca un ingrediente del bol para quitarlo</p>
+        </div>
+
+        <!-- Panel con pestañas -->
+        <div class="builder__panel" data-aos="fade-up" data-aos-delay="150">
+          <div class="tabs" role="tablist">
+            <button class="tabs__btn is-active" type="button" role="tab" data-tab="tab-mood"><span>01</span> Ánimo</button>
+            <button class="tabs__btn" type="button" role="tab" data-tab="tab-toppings"><span>02</span> Toppings</button>
+            <button class="tabs__btn" type="button" role="tab" data-tab="tab-fortune"><span>03</span> Omikuji</button>
+          </div>
+
+          <!-- 1 -->
+          <div class="tabs__panel is-active" id="tab-mood" role="tabpanel">
+            <h3 class="panel__title">¿Cómo llegas esta noche?</h3>
+            <div class="moods">
+              <button class="mood" type="button" data-color="#f3e2bf" data-name="Tonkotsu" data-word="cansada">
+                <span class="mood__kanji">疲</span>
+                <span class="mood__text">Cansada<small>Tonkotsu · cremoso</small></span>
+              </button>
+              <button class="mood" type="button" data-color="#9a5422" data-name="Shoyu" data-word="feliz">
+                <span class="mood__kanji">喜</span>
+                <span class="mood__text">Feliz<small>Shoyu · ligero</small></span>
+              </button>
+              <button class="mood" type="button" data-color="#d39a3a" data-name="Miso" data-word="con frío">
+                <span class="mood__kanji">寒</span>
+                <span class="mood__text">Con frío<small>Miso · intenso</small></span>
+              </button>
+              <button class="mood" type="button" data-color="#d8481a" data-name="Tantanmen" data-word="con energía">
+                <span class="mood__kanji">炎</span>
+                <span class="mood__text">Con energía<small>Tantanmen · picante</small></span>
+              </button>
+            </div>
+            <button class="btn btn--neon btn--next" type="button" data-go="tab-toppings">Siguiente</button>
+          </div>
+
+          <!-- 2 -->
+          <div class="tabs__panel" id="tab-toppings" role="tabpanel">
+            <h3 class="panel__title">Elige hasta seis</h3>
+            <div class="ingredients" id="ingredients"></div>
+            <div class="builder__total">
+              <span class="label"><span id="topping-count">0</span>/6 toppings</span>
+              <strong id="price">11,50 €</strong>
+            </div>
+            <button class="btn btn--neon btn--next" type="button" data-go="tab-fortune">Siguiente</button>
+          </div>
+
+          <!-- 3 -->
+          <div class="tabs__panel" id="tab-fortune" role="tabpanel">
+            <h3 class="panel__title">Tu omikuji te espera</h3>
+            <p class="panel__text">Escribe tu nombre y abre el papel de la suerte que acompaña a tu bol.</p>
+            <label class="field">
+              <span class="field__label">Tu nombre</span>
+              <input type="text" id="bowl-name" maxlength="20" placeholder="Lucía">
+            </label>
+            <button class="btn btn--neon" type="button" id="open-fortune">Abrir mi omikuji</button>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <!-- ===================== CARTA (carrusel jQuery) ===================== -->
+    <section class="section carta" id="carta">
+      <header class="section__head" data-aos="fade-up">
+        <p class="label">03 — Carta</p>
+        <h2 class="section__title">Los de siempre</h2>
+      </header>
+
+      <div class="slider" data-aos="fade-up">
+        <div class="slider__window">
+          <div class="slider__track">
+            <article class="slide slide--1">
+              <span class="slide__kanji" aria-hidden="true">豚</span>
+              <div class="slide__info">
+                <p class="label">Tonkotsu · 12 h de caldo</p>
+                <h3>Abrazo de abuela</h3>
+                <p>Chashu a la llama, huevo marinado, espinacas y un abanico de nori tostada.</p>
+                <span class="slide__price">13,90 €</span>
+              </div>
+            </article>
+            <article class="slide slide--2">
+              <span class="slide__kanji" aria-hidden="true">夜</span>
+              <div class="slide__info">
+                <p class="label">Shoyu · katsu crujiente</p>
+                <h3>Katsu de medianoche</h3>
+                <p>Pollo katsu recién frito, huevo, zanahoria, pepino y cilantro fresco.</p>
+                <span class="slide__price">14,20 €</span>
+              </div>
+            </article>
+            <article class="slide slide--3">
+              <span class="slide__kanji" aria-hidden="true">醤</span>
+              <div class="slide__info">
+                <p class="label">Shoyu · Tokio clásico</p>
+                <h3>Última línea de metro</h3>
+                <p>Caldo claro de soja, chashu, naruto, huevo marinado y montañas de cebolleta.</p>
+                <span class="slide__price">12,50 €</span>
+              </div>
+            </article>
+            <article class="slide slide--4">
+              <span class="slide__kanji" aria-hidden="true">辛</span>
+              <div class="slide__info">
+                <p class="label">Tantanmen · picante</p>
+                <h3>Neón rojo</h3>
+                <p>Caldo picante con kimchi, pollo a la plancha, huevo y sésamo negro.</p>
+                <span class="slide__price">13,50 €</span>
+              </div>
+            </article>
+          </div>
+        </div>
+
+        <div class="slider__controls">
+          <div class="slider__dots"></div>
+          <div class="slider__arrows">
+            <button class="slider__arrow slider__arrow--prev" type="button" aria-label="Anterior">←</button>
+            <button class="slider__arrow slider__arrow--next" type="button" aria-label="Siguiente">→</button>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <!-- ===================== HISTORIA ===================== -->
+    <section class="section story" id="historia">
+      <div class="story__grid">
+        <div class="story__photo" data-aos="fade-right">
+          <span class="story__tag label">Kokoro · 心</span>
+        </div>
+        <div class="story__text" data-aos="fade-left">
+          <p class="label">04 — Historia</p>
+          <h2 class="section__title">Corazón y mente,<br>en el mismo bol.</h2>
+          <p><strong>Kokoro (心)</strong> significa a la vez "corazón" y "mente" en japonés. Y de eso va este sitio.</p>
+          <p>Todo empezó en un callejón de Shimokitazawa, en Tokio, a las dos de la madrugada. Una barra de ocho taburetes, un cocinero mayor que no tenía carta y una sola pregunta antes de servir: "¿Qué tal ha ido el día?". Según la respuesta, el caldo era uno u otro.</p>
+          <p>Volvimos a Madrid con esa pregunta en la cabeza. Hoy, en una esquina de Hilarión Eslava, seguimos haciendo lo mismo: doce taburetes, cocina abierta hasta tarde y un bol pensado para cómo llegas, no para lo que pone en un menú.</p>
+        </div>
+      </div>
+    </section>
+
+    <!-- ===================== FAQ (acordeón jQuery) ===================== -->
+    <section class="section faq" id="faq">
+      <header class="section__head" data-aos="fade-up">
+        <p class="label">05 — Preguntas</p>
+        <h2 class="section__title">Antes de venir</h2>
+      </header>
+
+      <div class="accordion">
+        <div class="accordion__item">
+          <button class="accordion__head" type="button"><span class="accordion__num">01</span>¿Tenéis opciones veganas?<i></i></button>
+          <div class="accordion__body"><p>Sí. El miso y el tantanmen tienen versión 100 % vegetal, con tofu ahumado en lugar de chashu.</p></div>
+        </div>
+        <div class="accordion__item">
+          <button class="accordion__head" type="button"><span class="accordion__num">02</span>¿Puedo pedir para llevar?<i></i></button>
+          <div class="accordion__body"><p>Claro. Te damos el caldo y los fideos por separado para que no se pasen por el camino.</p></div>
+        </div>
+        <div class="accordion__item">
+          <button class="accordion__head" type="button"><span class="accordion__num">03</span>¿Qué es un omikuji?<i></i></button>
+          <div class="accordion__body"><p>Es un papel con un mensaje de la suerte que se recoge en los templos de Japón. Nosotros lo servimos con cada bol.</p></div>
+        </div>
+        <div class="accordion__item">
+          <button class="accordion__head" type="button"><span class="accordion__num">04</span>¿Hasta qué hora abrís?<i></i></button>
+          <div class="accordion__body"><p>Cocina abierta hasta la 01:00 de jueves a sábado y hasta las 00:00 el resto de días.</p></div>
+        </div>
+      </div>
+    </section>
+
+    <!-- ===================== RESERVA (formulario jQuery) ===================== -->
+    <section class="section booking" id="reserva">
+      <div class="booking__box" data-aos="fade-up">
+        <div class="booking__photo" aria-hidden="true"></div>
+        <div class="booking__form">
+        <header class="section__head section__head--left">
+          <p class="label">06 — Reserva</p>
+          <h2 class="section__title">Guárdanos un sitio<br>en la barra.</h2>
+        </header>
+
+        <form class="form" id="booking-form" novalidate>
+          <div class="form__grid">
+            <label class="field">
+              <span class="field__label">Nombre</span>
+              <input type="text" name="nombre" id="f-name" autocomplete="name">
+              <small class="field__error"></small>
+            </label>
+            <label class="field">
+              <span class="field__label">Email</span>
+              <input type="email" name="email" id="f-email" autocomplete="email">
+              <small class="field__error"></small>
+            </label>
+            <label class="field">
+              <span class="field__label">Día</span>
+              <input type="date" name="fecha" id="f-date">
+              <small class="field__error"></small>
+            </label>
+            <label class="field">
+              <span class="field__label">Personas</span>
+              <select name="personas" id="f-people">
+                <option value="">—</option>
+                <option>1</option><option>2</option><option>3</option>
+                <option>4</option><option>5</option><option>6</option>
+              </select>
+              <small class="field__error"></small>
+            </label>
+          </div>
+          <label class="field">
+            <span class="field__label">¿Cómo llegas esta noche? (opcional)</span>
+            <textarea name="mensaje" id="f-msg" rows="2"></textarea>
+          </label>
+          <button class="btn btn--neon" type="submit">Confirmar reserva</button>
+          <p class="form__success" id="form-success"></p>
+        </form>
+        </div>
+      </div>
+    </section>
+
+  </main>
+
+  <!-- ===================== PIE ===================== -->
+  <footer class="footer">
+    <p class="footer__big" aria-hidden="true">KOKORO</p>
+    <div class="footer__cols">
+      <p><span class="label">Dirección</span>C/ Hilarión Eslava, Argüelles, Madrid</p>
+      <p><span class="label">Horario</span>Mar–Dom · 20:00 – 01:00</p>
+    </div>
+  </footer>
+
+  <!-- ===================== MODAL OMIKUJI ===================== -->
+  <div class="modal" id="fortune-modal" aria-hidden="true">
+    <div class="omikuji" role="dialog" aria-modal="true" aria-labelledby="fortune-title">
+      <button class="modal__close" type="button" aria-label="Cerrar">×</button>
+      <span class="omikuji__vertical" aria-hidden="true">おみくじ</span>
+      <span class="omikuji__stamp" aria-hidden="true">吉</span>
+      <p class="label omikuji__label">Omikuji · tu fortuna</p>
+      <h3 id="fortune-title"></h3>
+      <p class="omikuji__fortune" id="fortune-text"></p>
+      <p class="omikuji__summary" id="fortune-summary"></p>
+      <a href="#reserva" class="btn btn--dark modal__btn">Reservar y pedirlo</a>
+    </div>
+  </div>
+
+  <!-- ===================== SCRIPTS ===================== -->
+  <script src="https://code.jquery.com/jquery-3.7.1.min.js"></script>
+  <script src="https://cdnjs.cloudflare.com/ajax/libs/aos/2.3.4/aos.js"></script>
+  <script src="https://cdn.jsdelivr.net/npm/typed.js@2.1.0/dist/typed.umd.js"></script>
+  <script src="main.js"></script>
+</body>
+</html>
